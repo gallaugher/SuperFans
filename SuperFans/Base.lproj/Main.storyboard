@@ -1,14 +1,18 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SuperFans" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +20,57 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="image0" translatesAutoresizingMaskIntoConstraints="NO" id="F0y-KD-stG">
+                                <rect key="frame" x="157" y="587" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="dix-m1-JRy" appends="YES" id="zko-eY-Ajy"/>
+                                    <outletCollection property="gestureRecognizers" destination="vwg-tJ-OEU" appends="YES" id="5V9-nY-12L"/>
+                                </connections>
+                            </imageView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1vA-3l-dq7">
+                                <rect key="frame" x="20" y="617" width="39" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Reset"/>
+                                <connections>
+                                    <action selector="resetButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="O5W-jf-YIS"/>
+                                </connections>
+                            </button>
+                            <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="a4p-Cb-KBI">
+                                <rect key="frame" x="20" y="28" width="339" height="514"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <mutableString key="text">For Boston, for Boston, We sing our proud refrain! For Boston, for Boston, 'Tis Wisdom's earthly fane. For here all are one And their hearts are true, And the towers on the Heights Reach to Heav'ns own blue. For Boston, for Boston, Till the echoes ring again! For Boston, for Boston, Thy glory is our own! For Boston, for Boston, 'Tis here that Truth is known. And ever with the Right Shall thy heirs be found, Till time shall be no more And thy work is crown'd. For Boston, for Boston, For Thee and Thine alone. </mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="equipmentImage" destination="F0y-KD-stG" id="egV-Kb-R3X"/>
+                        <outlet property="fightSongTextView" destination="a4p-Cb-KBI" id="dr4-kF-bQt"/>
+                        <outlet property="resetButton" destination="1vA-3l-dq7" id="d4F-TO-f45"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="dix-m1-JRy">
+                    <connections>
+                        <action selector="imageTapped:" destination="BYZ-38-t0r" id="bAA-Fh-jpv"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <swipeGestureRecognizer direction="up" id="vwg-tJ-OEU">
+                    <connections>
+                        <action selector="imageSwipped:" destination="BYZ-38-t0r" id="spv-rS-5nZ"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="37.331334332833585"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="image0" width="225" height="225"/>
+    </resources>
 </document>
